@@ -1,0 +1,109 @@
+:root {
+    --neutral-100: #f0f0f0;
+    --neutral-200: #e4e4e4;
+    --neutral-300: #d5d5d5;
+    --neutral-400: #a2a2a2;
+    --neutral-500: #494949;
+    --neutral-600: #3b3b3b;
+    --neutral-700: #2d2d2d;
+    --neutral-800: #1f1f1f;
+    --neutral-900: #111111;
+  
+    --blue-100: #d8e8ef;
+    --blue-200: #a4cada;
+    --blue-300: #70acc6;
+    --blue-400: #3d8eb1;
+    --blue-500: #09709c;
+    --blue-600: #07587b;
+    --blue-700: #05415a;
+    --blue-800: #03293a;
+    --blue-900: #011219;
+  
+    --red-100: #FAD8CD;
+    --red-200: #F5AA9E;
+    --red-300: #E16F69;
+    --red-400: #C44247;
+    --red-500: #9E1225;
+    --red-600: #870D29;
+    --red-700: #870D29;
+    --red-800: #5B0529;
+    --red-900: #4B0328;
+  
+    --green-100: #E5F8CD;
+    --green-200: #C6F29D;
+    --green-300: #96D967;
+    --green-400: #66B43D;
+    --green-500: #308210;
+    --green-600: #206F0B;
+    --green-700: #145D08;
+    --green-800: #0A4B05;
+    --green-900: #033E03;
+  
+    --gold-100: #FCECCB;
+    --gold-200: #FAD598;
+    --gold-300: #F1B463;
+    --gold-400: #E3923C;
+    --gold-500: #D16304;
+    --gold-600: #B34B02;
+    --gold-700: #963602;
+    --gold-800: #792501;
+    --gold-900: #641900;
+  }
+  
+  body {
+    --bg-100: var(--neutral-300);
+    --bg-200: var(--neutral-200);
+    --text-color: var(--neutral-700);
+    --title-color: var(--neutral-800);
+  }
+  
+  body.dark {
+    --bg-100: var(--neutral-800);
+    --bg-200: var(--neutral-700);
+    --text-color: var(--neutral-400);
+    --title-color: var(--neutral-300);
+  }
+  
+  body.blue {
+    --accent: var(--blue-500);
+    --gradient: linear-gradient(45deg, var(--blue-500), var(--blue-900));
+    --svg-fill: 
+      invert(65%)
+      sepia(100%)
+      hue-rotate(200deg)
+      saturate(5000%)
+      brightness(30%);
+  }
+  
+  body.red {
+    --accent: var(--red-400);
+    --gradient: linear-gradient(45deg, var(--red-400), var(--red-900));
+    --svg-fill: 
+      invert(65%)
+      sepia(100%)
+      hue-rotate(340deg)
+      saturate(5000%)
+      brightness(30%);
+  }
+  
+  body.gold {
+    --accent: var(--gold-500);
+    --gradient: linear-gradient(45deg, var(--gold-500), var(--gold-900));
+    --svg-fill: 
+      invert(65%)
+      sepia(100%)
+      hue-rotate(5deg)
+      saturate(5000%)
+      brightness(30%);
+  }
+  
+  body.green {
+    --accent: var(--green-500);
+    --gradient: linear-gradient(10deg, var(--green-400), var(--green-900));
+    --svg-fill: 
+      invert(65%)
+      sepia(100%)
+      hue-rotate(40deg)
+      saturate(5000%)
+      brightness(30%);
+  }

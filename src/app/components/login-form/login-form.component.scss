@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+
+  form {
+    margin-block: 2rem;
+    display: grid;
+    gap: 2rem;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

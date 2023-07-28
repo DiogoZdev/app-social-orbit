@@ -1,0 +1,30 @@
+button {
+    width: 100%;
+    max-width: 300px;
+    height: 45px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: var(--font-sm);
+    padding-inline: 1rem;
+  
+    &:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+  }
+  
+  .primary {
+    color: white;
+    background-color: var(--accent);
+  }
+  
+  .secondary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: none;
+  }
+  
+  .neutral {
+    border: 3px solid var(--text-color);
+  }

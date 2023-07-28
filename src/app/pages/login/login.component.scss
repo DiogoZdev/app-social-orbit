@@ -1,0 +1,17 @@
+main {
+    height: 100%;
+    background: var(--gradient);
+}
+
+#login-area {
+    background-color: var(--bg-100);
+    width: 100vw;
+    max-width: 500px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 2rem;
+}

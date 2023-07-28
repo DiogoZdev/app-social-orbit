@@ -1,0 +1,43 @@
+<h1>Dev Orbitz</h1>
+
+<div class="wrapper">
+
+  <form [formGroup]="loginForm" class="form-login">
+    <div class="form-input-area" *ngIf="!isLoginForm">
+      <input matInput formControlName="name" type="text" placeholder=" ">
+      <label for="username">Nome</label>
+    </div>
+  
+    <div class="form-input-area">
+      <input matInput formControlName="email" type="text" placeholder=" ">
+      <label for="email">e-Mail</label>
+    </div>
+  
+    <div class="form-input-area">
+      <input matInput formControlName="password" type="password" placeholder=" ">
+      <label for="password">Senha</label>
+    </div>
+  
+    <div class="form-input-area" *ngIf="!isLoginForm">
+      <input matInput formControlName="repeatPassword" type="password" placeholder=" ">
+      <label for="username">Confirmar Senha</label>
+    </div>
+  </form>
+  
+  <div class="buttons">
+  
+    <Button
+      [buttonText]="isLoginForm ? 'Login' : 'Cadastrar'"
+      buttonClass="primary"
+      (clickEmitter)="mainAction()"
+    ></Button>
+  
+    <Button
+      [buttonText]="isLoginForm ? 'Fazer cadastro' : 'fazer login'"
+      buttonClass="secondary"
+      (clickEmitter)="toggleRegister()"
+    ></Button>
+    
+  </div>
+
+</div>

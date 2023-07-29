@@ -13,3 +13,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
+.error {
+  color: var(--red-500);
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--red-200);
+  border: dashed 3px var(--red-500);
+  font-size: var(--size-md);
+  font-family: roboto, sans-serif;
+}

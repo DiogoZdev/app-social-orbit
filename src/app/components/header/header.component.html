@@ -1,1 +1,15 @@
-<p>header works!</p>
+<div class="banner">
+    <Container>
+
+        <div id="user-info">
+            <div id="profile-picture">
+                <img [src]="user.picture ?? 'assets/nouser.png'" alt="profile-picture">
+            </div>
+            <div id="profile-id">
+                <span id="name">{{user.name}}</span>
+                <span id="role">{{user.role}}</span>
+            </div>
+        </div>
+
+    </Container>
+</div>

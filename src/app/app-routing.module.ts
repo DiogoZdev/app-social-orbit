@@ -7,7 +7,9 @@ import { ConfigPage } from './pages/config/config.component';
 const routes: Routes = [
   {path: '', component: LoginPage},
   {path: 'home', component: HomePage},
-  {path: 'config/:id', component: ConfigPage}
+  {path: 'blog', component: ConfigPage},
+  {path: 'projects', component: ConfigPage},
+  {path: 'settings', component: ConfigPage}
 ];
 
 @NgModule({

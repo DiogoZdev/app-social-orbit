@@ -2,9 +2,9 @@ button {
     width: 100%;
     max-width: 300px;
     height: 45px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: var(--size-tn);
     font-size: var(--font-sm);
     padding-inline: 1rem;
   

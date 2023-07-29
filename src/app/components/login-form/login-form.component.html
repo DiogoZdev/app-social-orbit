@@ -1,5 +1,3 @@
-<h1>Dev Orbitz</h1>
-
 <div class="wrapper">
 
   <form [formGroup]="loginForm" class="form-login">
@@ -38,6 +36,10 @@
       (clickEmitter)="toggleRegister()"
     ></Button>
     
+  </div>
+
+  <div class="error" *ngIf="error">
+    {{ error }}
   </div>
 
 </div>

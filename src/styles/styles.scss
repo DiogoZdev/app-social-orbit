@@ -8,6 +8,8 @@
     border: none;
     outline: none;
     box-sizing: border-box;
+    background: unset;
+    list-style: none;
   }
   
   html, body {
@@ -22,10 +24,16 @@
     font-family: audiowide !important;
     font-weight: normal;
     line-height: 1.5;
+    color: var(--text-color);
   }
   
   p, li, a, label {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  a {
+    color: unset;
+    text-decoration: none;
   }
 
   // Form Styles

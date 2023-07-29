@@ -1,0 +1,22 @@
+nav {
+    background: var(--bg-100);
+    color: var(--text-color);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    color: var(--accent);
+
+    span {
+        font-family: audiowide;
+        color: var(--text-color);
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+    }
+}

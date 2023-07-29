@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { Router } from '@angular/router';
+import { AccountService } from 'src/app/globals/services/account.service';
 
 @Component({
   selector: 'LoginForm',
@@ -17,9 +18,13 @@ export class LoginFormComponent implements OnInit {
 
   loginForm!: FormGroup;
 
+  error: string | null = null;
+  message: string | null = null;
+
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
+    private account: AccountService
   ) {
 
   }
@@ -47,23 +52,48 @@ export class LoginFormComponent implements OnInit {
   toggleRegister() {
     this.isLoginForm = !this.isLoginForm;
     this.isLoginForm ? this.setLoginForm() : this.setRegisterForm();
+    this.error = null;
   }
 
 
   mainAction() {
-    console.log(`form valido: ${ this.loginForm.valid }`);
-    
     this.isLoginForm ? this.login() : this.register();
   }
 
-  login() {
-    console.log(this.loginForm.value)
-    this.router.navigate(['home']);
+  async login() {
+    const { email, password } = this.loginForm.value;
 
+    (await this.account.login({ email, password })).toPromise().then((res) => {
+
+      const { token, user } = res as { user: any, token: string };
+
+      if (token) {
+        localStorage.setItem("token", token)
+        localStorage.setItem("user", JSON.stringify(user))
+        this.router.navigate(["/home"]);
+      } else {
+        this.error = "Usuário ou senha incorretos";
+        throw new Error("Unauthorized");
+      }
+    });
   }
 
-  register() {
-    console.log('clicou cadastrar')
-    console.log(this.loginForm.value)
+  async register() {
+    const { name, email, password, repeatPassword } = this.loginForm.value;
+
+    if (this.loginForm.valid) {
+      if (password !== repeatPassword) {
+        this.error = "As senhas não são iguais";
+        return;
+      }
+
+      await (await this.account.register({ name, email, password })).toPromise().then((res) => {
+        this.message = JSON.stringify(res);
+      })
+        
+          
+    } else {
+      this.error = "Todos os campos devem ser preenchidos corretamente";
+    }
   }
 }
